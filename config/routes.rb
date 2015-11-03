@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   resource :contacts, only: [:new, :create], path_names: {:new => ""}
   resource :terms, only: [:new], path_names: {:new => ""}
-  resource :about, only: [:new], path_names: {:new => ""}
+  #resource :about => 'about#new' , only: [:new], path_names: {:new => ""}
+  get '/about' => 'about#new'
   resources :articles
 
   # The priority is based upon order of creation: first created -> highest priority.
