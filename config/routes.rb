@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resource :terms, only: [:new], path_names: {:new => ""}
   #resource :about => 'about#new' , only: [:new], path_names: {:new => ""}
   get '/about' => 'about#new'
-  resources :articles
+  resources :articles do
+    resources :comments, only: [:create]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
