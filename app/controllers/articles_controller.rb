@@ -34,6 +34,16 @@ class ArticlesController < ApplicationController
     end
   end
   
+  def destroy
+   if Article.find(params[:id]).destroy
+      redirect_to "/articles" 
+     end
+      #render action: "index"
+    #else
+     # render action: "edit"
+    #end
+  end
+  
   private
   
   def article_params
