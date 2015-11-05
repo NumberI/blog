@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
   
   def destroy
    if Article.find(params[:id]).destroy
-      redirect_to "/articles" 
+      redirect_to articles_path 
      end
       #render action: "index"
     #else
