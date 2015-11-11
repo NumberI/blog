@@ -11,4 +11,16 @@ describe Article do
     it { should have_many :comments }
   end
   
+  describe "#subject" do
+    it "returns the article title" do
+      article = create(:article, title: "ffsgege")
+      expect(article.subject).to eq "ffsgege"
+    end
+  end
+  
+  describe "#last_comment" do
+    it "returns the last comment" do
+    
+    end
+  end
 end
