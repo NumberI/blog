@@ -51,4 +51,5 @@ gem 'devise'
 group :test, :development do
 	gem "rspec-rails", "~> 2.4"
 	gem "capybara"
+	gem "shoulda-matchers"
 end
