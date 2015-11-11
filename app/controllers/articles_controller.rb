@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :create]
+ 
+  
+  
   def index
     @articles = Article.all
   end
@@ -24,6 +27,9 @@ class ArticlesController < ApplicationController
   end
   
   def edit
+    if Article.find(params[:id]).author!=current_user.username
+      redirect_to articles_path
+    end
     @article = Article.find(params[:id])
   end
 
@@ -37,6 +43,9 @@ class ArticlesController < ApplicationController
   end
   
   def destroy
+   if Article.find(params[:id]).author!=current_user.username
+      redirect_to articles_path
+   end
    if Article.find(params[:id]).destroy
       redirect_to articles_path 
      end
