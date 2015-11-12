@@ -14,16 +14,18 @@
 		Author: <%= article.author %><br/>
 	</i>
 <div class="dropdown">
-	<button type="button" class="btn btn-default btn-xs <% if article.author == current_user.username %> btn-success <% end %>" data-toggle="dropdown" >
+	<button type="button" class="btn btn-default btn-xs <% if current_user != nil %> <% if article.author == current_user.username %> btn-success <% end %> <% end %>" data-toggle="dropdown" >
 	  <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Details
 	</button>
 	<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 		<li><%= link_to "Show", article_path(article) %></li>
-		<% if article.author == current_user.username %>
-			<li><%= link_to "Edit", edit_article_path(article) %></li>
-			<li class="label-danger">
-				<%= link_to "Destroy", article_path(article), method: :delete, data: { confirm: "R u sure?"} %>
-			</li>
+		<% if current_user != nil %>
+			<% if article.author == current_user.username %>
+				<li><%= link_to "Edit", edit_article_path(article) %></li>
+				<li class="label-danger">
+					<%= link_to "Destroy", article_path(article), method: :delete, data: { confirm: "R u sure?"} %>
+				</li>
+			<% end %>
 		<% end %>
 	</ul>
 </div>
