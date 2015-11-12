@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
-  validates :title, presence: true
-  validates :text, presence: true
+  validates :title, length: {minimum: 2, maximum: 140}, presence: true
+  validates :text, length: {minimum: 3, maximum: 4000}, presence: true
   has_many :comments
   
   def subject
