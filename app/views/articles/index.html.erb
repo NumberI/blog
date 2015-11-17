@@ -1,6 +1,6 @@
 <div style=padding-left:5%;}>
 <h1>
-	List of articles:
+	<%= t('articles.list') %>
 </h1>
 
 <% @articles.each do |article| %>
@@ -11,11 +11,11 @@
 	<%= article.text %>
 </p>
 	<i>
-		Author: <%= article.author %><br/>
+		<%= t('articles.author') %><%= article.author %><br/>
 	</i>
 <div class="dropdown">
 	<button type="button" class="btn btn-default btn-xs <% if current_user != nil %> <% if article.author == current_user.username %> btn-success <% end %> <% end %>" data-toggle="dropdown" >
-	  <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Details
+	  <span class="glyphicon glyphicon-book" aria-hidden="true"></span> <%= t('articles.button1') %>
 	</button>
 	<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 		<li><%= link_to "Show", article_path(article) %></li>

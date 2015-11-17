@@ -24,3 +24,23 @@ en:
   
   contacts:
     contact_us: "Contact usssss!"
+  articles:
+    comments: "Comments:"
+    said: "said:"
+    body: "Your comment:"
+    button: "Create"
+    list: "List of articles:"
+    author: "Author: "
+    button1: "Details"
+  application:
+    menu: "Menu"
+    link1: "All articles"
+    link2: "New article"
+    hello: "Hello, "
+    sign_in: "Sign in!"
+    sign_out: "Sign out..."
+  article:
+    new: "New articleeeee"
+    title: "Title"
+    text: "Text"
+    save: "Save"

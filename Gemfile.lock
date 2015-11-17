@@ -209,7 +209,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap
   byebug
-  capybara
+  capybara (= 2.5.0)
   coffee-rails (~> 4.1.0)
   database_cleaner
   devise
@@ -218,7 +218,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.4)
-  rspec-rails (~> 2.4)
+  rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   shoulda-matchers

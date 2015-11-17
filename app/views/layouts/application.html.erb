@@ -23,13 +23,13 @@
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
 			<li class="dropdown">
-			  <a class="dropdown-toggle btn-info" data-toggle="dropdown" role="button" aria-haspopup="true" style="font-weight:800; margin:5%; border-style:double; border-width:6px; color:white;">Menu </a>
+			  <a class="dropdown-toggle btn-info" data-toggle="dropdown" role="button" aria-haspopup="true" style="font-weight:800; margin:5%; border-style:double; border-width:6px; color:white;"><%= t('application.menu') %></a>
 			  <ul class="dropdown-menu">
-				<li><%= link_to "All articles", articles_path %></li>
+				<li><%= link_to t('application.link1'), articles_path %></li>
 				<li role="separator" class="divider"></li>
 				<li >
 					<span style="font-weight:600; color:blue; margin-left:12%; padding:0; text-align:right;">
-						<%= link_to "New article", new_article_path %>
+						<%= link_to t('application.link2'), new_article_path %>
 					</span>
 				</li>
 			  </ul>
@@ -40,9 +40,9 @@
 			<div class="container-fluid">
 				<h2>
 					<% if user_signed_in? %>
-						Hello, <%= current_user.username %> | <%= link_to "Sign out...", destroy_user_session_path, method: :delete %>
+						<%= t('application.hello') %><%= current_user.username %> | <%= link_to t('application.sign_out'), destroy_user_session_path, method: :delete %>
 					<% else %>
-						<%= link_to "Sign in!", new_user_session_path %> 
+						<%= link_to t('application.sign_in'), new_user_session_path %> 
 					<% end %>
 				</h2>
 			</div>

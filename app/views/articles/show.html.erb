@@ -8,12 +8,12 @@
 </div>
 <div style=padding-left:5%;>
 <h3>
-	Comments:
+	<%= t('articles.comments') %>
 </h3>
 <% @article.comments.each do |f| %>
 	<p>
 	<i>
-		<%= f.author %> said:<br/>
+		<%= f.author %> <%= t('articles.said') %><br/>
 	</i>
 	</p>	
 	<p>
@@ -27,11 +27,11 @@
 <div align='center'>
 <%= form_for([@article, @article.comments.build]) do |f| %>
 	<p>
-		<%= f.label :body %><br/>
+		<%= f.label t('articles.body') %><br/>
 		<%= f.text_area :body %>
 	</p>	
 	<p>
-		<%= f.submit %><br/>
+		<%= f.submit t('articles.button')%><br/>
 
 	</p>
 <% end %>
