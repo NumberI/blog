@@ -1,6 +1,6 @@
 require "spec_helper"
 
-#feature "Article creation" do
+#feature "Comment creation" do
 #  scenario "allows user to make new article" do
 #    sign_up
 #    new_art
