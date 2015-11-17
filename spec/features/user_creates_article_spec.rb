@@ -21,9 +21,7 @@ feature "Article creation" do
   
   scenario "allows user to edit article" do
     article = create(:article, author: "bbbbb"  )
-    puts article.inspect
     visit edit_article_path(article)
-    puts current_path
     fill_in :article_title, :with => "qqqqqqqqs"
     click_button "Save"
     expect(page).to have_content "qqqqqqqqs"
